@@ -41,17 +41,12 @@ my-app/
 
 ## Development
 
-After setup, edit `app.js` and restart the container to see changes:
+The app runs with Node.js `--watch` mode - edit `app.js` and changes are picked up automatically, no restart needed.
 
-```bash
-scdev restart
-```
-
-To run commands inside the container:
+To add packages:
 
 ```bash
 scdev exec app -- pnpm add <package>
-scdev restart
 ```
 
 ## Requirements
