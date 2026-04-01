@@ -3,7 +3,9 @@
 [no-exit-message]
 default:
     scdev start
-    scdev exec app sh -c "export COREPACK_ENABLE_DOWNLOAD_PROMPT=0 && corepack enable && pnpm install && touch .setup-complete"
+    @echo ""
+    @echo "Installing dependencies..."
+    scdev exec app sh -c "corepack enable && pnpm install && touch .setup-complete"
     @echo ""
     @echo "Setup complete! App will start automatically."
     @echo ""
