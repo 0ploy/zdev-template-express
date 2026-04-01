@@ -16,7 +16,8 @@ services:
   app:
     image: node:22-alpine
     command: >-
-      sh -c "export COREPACK_ENABLE_DOWNLOAD_PROMPT=0 && corepack enable &&
+      sh -c "export COREPACK_ENABLE_DOWNLOAD_PROMPT=0 &&
+      corepack enable &&
       if [ ! -f .setup-complete ]; then
         echo 'Waiting for setup... Run: scdev setup';
         while [ ! -f .setup-complete ]; do sleep 2; done;
