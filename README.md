@@ -26,6 +26,8 @@ After setup completes, your app is running at `https://my-app.scalecommerce.site
 3. Installs dependencies (`pnpm install`)
 4. Marks setup as complete - the app starts automatically
 
+All commands can be seen in `.scdev/commands/setup.just`.
+
 ## Project structure
 
 ```
