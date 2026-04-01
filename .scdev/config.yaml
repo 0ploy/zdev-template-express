@@ -1,0 +1,39 @@
+version: 1
+name: ${PROJECTDIR}
+domain: ${PROJECTNAME}.${SCDEV_DOMAIN}
+
+info: |
+  ## ${PROJECTNAME}
+
+  Express.js application.
+
+  Run `scdev setup` to install dependencies.
+
+shared:
+  router: true
+
+services:
+  app:
+    image: node:22-alpine
+    command: >-
+      sh -c "export COREPACK_ENABLE_DOWNLOAD_PROMPT=0 && corepack enable &&
+      if [ ! -f .setup-complete ]; then
+        echo 'Waiting for setup... Run: scdev setup';
+        while [ ! -f .setup-complete ]; do sleep 2; done;
+      fi;
+      pnpm install && exec pnpm start"
+    working_dir: /app
+    volumes:
+      - ${PROJECTPATH}:/app
+    environment:
+      NODE_ENV: development
+      PORT: "3000"
+    routing:
+      port: 3000
+
+mutagen:
+  ignore:
+    - node_modules
+    - .pnpm-store
+    - .scdev
+    - .setup-complete
