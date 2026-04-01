@@ -46,7 +46,7 @@ The app runs with Node.js `--watch` mode - edit `app.js` and changes are picked 
 To add packages:
 
 ```bash
-scdev exec app -- pnpm add <package>
+scdev exec app pnpm add <package>
 ```
 
 ## Requirements
