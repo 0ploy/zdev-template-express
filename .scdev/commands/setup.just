@@ -2,7 +2,7 @@
 
 [no-exit-message]
 default:
-    scdev start
+    scdev start -q
     @echo ""
     @echo "Installing dependencies..."
     scdev exec app sh -c "corepack enable && pnpm install && touch .setup-complete"
